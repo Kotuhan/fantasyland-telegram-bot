@@ -1,0 +1,28 @@
+{
+  "name": "fantasyland-telegram-bot",
+  "version": "1.0.0",
+  "description": "telegram bot for fantasyland",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pure-js/fantasyland-telegram-bot.git"
+  },
+  "keywords": [
+    "telegram"
+  ],
+  "author": "pure-js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pure-js/fantasyland-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/pure-js/fantasyland-telegram-bot#readme",
+  "devDependencies": {
+    "telebot": "^1.0.6"
+  },
+  "dependencies": {
+    "dropbox": "^2.5.0"
+  }
+}
