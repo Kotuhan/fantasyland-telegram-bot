@@ -24,6 +24,13 @@ dbx.sharingGetSharedLinkFile({url: 'https://www.dropbox.com/s/0ifzbgkcpnl1vic/fi
     console.log(error);
   });
 
+let captcha;
+
+fs.readFile('tmp/photo.png', function (err, data) {
+  if (err) throw err;
+  captcha = data;
+});
+
 bot.on('/start', msg => {
   let fromId = msg.from.id;
   let firstName = msg.from.first_name;
@@ -32,8 +39,12 @@ bot.on('/start', msg => {
 });
 
 bot.on(['/captcha', '/c'], msg => {
-  let img = 'http://img.wikinut.com/img/gycf69_-6rv_5fol/jpeg/724x5000/Best-Friends-Img-Src%3AImage%3A-FreeDigitalPhotos.net.jpeg'
-  return bot.sendPhoto(msg.from.id, binary);
+  let fromId = msg.from.id;
+  let markup = bot.keyboard([
+    ['0', '1', '2', '3', '4'],
+    ['5', '6', '7', '8', '9']
+  ], { resize: true });
+  return bot.sendPhoto(fromId, captcha, { markup });
 });
 
 bot.connect();
